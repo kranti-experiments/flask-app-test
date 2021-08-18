@@ -19,26 +19,26 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 # Create a flask instance
-app = Flask(__name__)
-run_with_ngrok(app)
+appkranti = Flask(__name__)
+#run_with_ngrok(app)
 
-app
+appkranti
 
 # Create Secret Key
-app.config['SECRET_KEY'] = 'tsai'
-app
+appkranti.config['SECRET_KEY'] = 'tsai'
+appkranti
 
 # Create a Form Class
 class NamerForm(FlaskForm):
 	name = StringField("What's Your Name", validators=[DataRequired()])
 	submit = SubmitField("Submit")
 
-@app.route("/")
+@appkranti.route("/")
 def root():
     return 'Root of Flask WebApp!'
 
 # Create Name Page
-@app.route('/name', methods=['GET', 'POST'])
+@appkranti.route('/name', methods=['GET', 'POST'])
 def name():
   name = None
   form = NamerForm()
@@ -50,7 +50,7 @@ def name():
                          name = name,
                          form = form)
 
-app.run()
+appkranti.run()
 
 
 
