@@ -9,12 +9,13 @@
   <br/>
   <form method="POST">
       {{ form.hidden_tag()}}
-
+      <!-- name forms -->
       {{ form.name.label(class="form-label") }}
-
       {{ form.name(class="form-control") }}
-      <br/>
-      {{form.submit(class="btn btn-primary")}}
+      <br />
+      <br />
+      <!-- submit button -->
+      {{form.submit(class="btn btn-success")}}
   </form>
 {% endif %}
 
