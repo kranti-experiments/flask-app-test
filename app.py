@@ -33,12 +33,8 @@ class NamerForm(FlaskForm):
 	name = StringField("What's Your Name", validators=[DataRequired()])
 	submit = SubmitField("Submit")
 
-@app.route("/")
-def root():
-    return 'Root of Flask WebApp!'
-
 # Create Name Page
-@app.route('/name', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def name():
   name = None
   form = NamerForm()
